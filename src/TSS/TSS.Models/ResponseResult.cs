@@ -17,6 +17,8 @@
 //
 // ============================================================
 using System;
+using System.Collections.Generic;
+
 namespace TSS.Models
 {
     /// <summary>
@@ -67,6 +69,24 @@ namespace TSS.Models
         /// user-defined data
         /// </summary>
         public Tdata Data { get; set; }
+    }
+
+    /// <summary>
+    /// page response result
+    /// </summary>
+    /// <typeparam name="Tdata"></typeparam>
+    public class PageResponseResult<Tdata> : ResponseResult<IEnumerable<Tdata>>
+    {
+        /// <summary>
+        /// instance method
+        /// </summary>
+        /// <param name="status">info status</param>
+        /// <param name="errmsg">error message</param>
+        /// <param name="data">user-defined data model collect</param>
+        public PageResponseResult(bool status = true, string errmsg = "success", IEnumerable<Tdata> data = default) : base(status: status, errmsg: errmsg)
+        {
+            this.Data = data;
+        }
     }
 }
 
