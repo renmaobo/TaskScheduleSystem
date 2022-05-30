@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using TSS.BllServices;
 using TSS.Models;
 using TSS.Models.DtoModelss;
 
@@ -14,6 +15,20 @@ namespace TSS.AppApi.Controllers
     [Route("api/[controller]")]
     public class TaskPlanController : Controller
     {
+        /// <summary>
+        /// task plan bll service
+        /// </summary>
+        private ITaskPlanBllService TaskPlanBllService { get; set; }
+
+        /// <summary>
+        /// instance method
+        /// </summary>
+        /// <param name="taskPlanBllService">register task plan bll service.</param>
+        public TaskPlanController(ITaskPlanBllService taskPlanBllService)
+        {
+            this.TaskPlanBllService = taskPlanBllService;
+        }
+
         /// <summary>
         /// register a task plan
         /// </summary>

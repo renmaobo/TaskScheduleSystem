@@ -8,8 +8,13 @@
     <None Remove="Base\" />
     <None Remove="Base\DtoModels\" />
     <None Remove="DtoModelss\" />
+    <None Remove="DbModels\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DtoModelss\" />
+    <Folder Include="DbModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\MongoDB\src\MongoDB\MongoDB.csproj" />
   </ItemGroup>
 </Project>
