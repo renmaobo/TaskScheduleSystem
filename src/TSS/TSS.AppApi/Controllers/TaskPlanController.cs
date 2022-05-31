@@ -34,10 +34,10 @@ namespace TSS.AppApi.Controllers
         /// </summary>
         /// <param name="task">task plan model</param>
         /// <returns></returns>
-        public ResponseResult<string> Register([FromBody]TaskDtoModel task)
+        public ResponseResult<string> Register([FromBody] TaskDtoModel task)
         {
-
-            return new ResponseResult<string>();
+            var result = this.TaskPlanBllService.Register(taskDtoModel: task);
+            return result;
         }
 
         /// <summary>
@@ -45,9 +45,10 @@ namespace TSS.AppApi.Controllers
         /// </summary>
         /// <param name="task">task plan model</param>
         /// <returns></returns>
-        public ResponseResult Update([FromQuery]string taskId, [FromBody]TaskDtoModel task)
+        public ResponseResult Update([FromQuery] string taskId, [FromBody] TaskDtoModel task)
         {
-            return null;
+            var result = this.TaskPlanBllService.Update(taskId: taskId, taskDtoModel: task);
+            return result;
         }
 
         /// <summary>
@@ -55,9 +56,10 @@ namespace TSS.AppApi.Controllers
         /// </summary>
         /// <param name="taskId">target task plan id</param>
         /// <returns></returns>
-        public ResponseResult Remove([FromQuery]string taskId)
+        public ResponseResult Remove([FromQuery] string taskId)
         {
-            return null;
+            var result = this.TaskPlanBllService.Remove(taskId: taskId);
+            return result;
         }
 
         /// <summary>
@@ -65,9 +67,10 @@ namespace TSS.AppApi.Controllers
         /// </summary>
         /// <param name="taskId">target task plan id</param>
         /// <returns></returns>
-        public ResponseResult Start([FromQuery]string taskId)
+        public ResponseResult Start([FromQuery] string taskId)
         {
-            return null;
+            var result = this.TaskPlanBllService.Start(taskId: taskId);
+            return result;
         }
 
         /// <summary>
@@ -75,9 +78,10 @@ namespace TSS.AppApi.Controllers
         /// </summary>
         /// <param name="taskId">target task plan id</param>
         /// <returns></returns>
-        public ResponseResult Pause([FromQuery]string taskId)
+        public ResponseResult Pause([FromQuery] string taskId)
         {
-            return null;
+            var result = this.TaskPlanBllService.Pause(taskId: taskId);
+            return result;
         }
 
         /// <summary>
@@ -87,7 +91,8 @@ namespace TSS.AppApi.Controllers
         /// <returns></returns>
         public PageResponseResult<TaskDtoModel> GetPage([FromQuery] PageQueryCondition condition)
         {
-            return null;
+            var result = this.TaskPlanBllService.GetPage(condition: condition);
+            return result;
         }
     }
 }

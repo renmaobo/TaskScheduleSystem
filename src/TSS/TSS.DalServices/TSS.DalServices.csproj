@@ -10,4 +10,7 @@
   <ItemGroup>
     <Folder Include="ImplServices\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TSS.Models\TSS.Models.csproj" />
+  </ItemGroup>
 </Project>

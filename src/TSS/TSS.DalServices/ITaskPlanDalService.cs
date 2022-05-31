@@ -17,13 +17,27 @@
 //
 // ============================================================
 using System;
+using TSS.Models;
+using TSS.Models.DbModels;
+
 namespace TSS.DalServices
 {
-	/// <summary>
+    /// <summary>
     /// task plan interface dal-service
     /// </summary>
-	public interface ITaskPlanDalService
-	{
-	}
+    public interface ITaskPlanDalService
+    {
+        public ResponseResult<string> Register(TaskPlanDbModel taskPlanDbModel);
+
+        public ResponseResult Update(string taskId, TaskPlanDbModel taskPlanDbModel);
+
+        public ResponseResult Remove(string taskId);
+
+        public ResponseResult Start(string taskId);
+
+        public ResponseResult Pause(string taskId);
+
+        public PageResponseResult<TaskPlanDbModel> GetPage(PageQueryCondition condition);
+    }
 }
 

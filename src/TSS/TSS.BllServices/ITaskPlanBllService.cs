@@ -17,6 +17,9 @@
 //
 // ============================================================
 using System;
+using TSS.Models;
+using TSS.Models.DtoModelss;
+
 namespace TSS.BllServices
 {
 	/// <summary>
@@ -24,6 +27,17 @@ namespace TSS.BllServices
     /// </summary>
 	public interface ITaskPlanBllService
 	{
-	}
+        public ResponseResult<string> Register(TaskDtoModel taskDtoModel);
+
+        public ResponseResult Update(string taskId, TaskDtoModel taskDtoModel);
+
+        public ResponseResult Remove(string taskId);
+
+        public ResponseResult Start(string taskId);
+
+        public ResponseResult Pause(string taskId);
+
+        public PageResponseResult<TaskDtoModel> GetPage(PageQueryCondition condition);
+    }
 }
 

@@ -6,11 +6,14 @@
 
   <ItemGroup>
     <None Remove="Impl\" />
+    <None Remove="DataConvert\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ImplServices\" />
+    <Folder Include="DataConvert\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TSS.DalServices\TSS.DalServices.csproj" />
+    <ProjectReference Include="..\TSS.Models\TSS.Models.csproj" />
   </ItemGroup>
 </Project>
